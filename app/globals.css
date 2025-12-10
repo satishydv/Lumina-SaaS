@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;400;600;700&family=Instrument+Sans:wght@400;500;600&display=swap');
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hide scrollbar for cleaner demo */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+/* Gradient animation for text */
+@keyframes gradient {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease infinite;
+}
+
