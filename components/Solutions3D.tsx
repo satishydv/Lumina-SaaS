@@ -81,6 +81,7 @@ const Particles: React.FC = () => {
 
   useFrame((state) => {
     if (!mesh.current) return;
+    const meshInstance = mesh.current;
     particles.forEach((particle, i) => {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;
       t = particle.t += speed / 2;
@@ -96,9 +97,9 @@ const Particles: React.FC = () => {
       dummy.scale.set(s, s, s);
       dummy.rotation.set(s * 5, s * 5, s * 5);
       dummy.updateMatrix();
-      mesh.current.setMatrixAt(i, dummy.matrix);
+      meshInstance.setMatrixAt(i, dummy.matrix);
     });
-    mesh.current.instanceMatrix.needsUpdate = true;
+    meshInstance.instanceMatrix.needsUpdate = true;
   });
 
   return (
